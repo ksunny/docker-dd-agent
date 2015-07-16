@@ -36,5 +36,7 @@ COPY entrypoint.sh /entrypoint.sh
 # Expose DogStatsD port
 EXPOSE 8125/udp
 
+ADD patches/checks.d/* /opt/datadog-agent/agent/checks.d/
+
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["supervisord", "-n", "-c", "/etc/dd-agent/supervisor.conf"]
