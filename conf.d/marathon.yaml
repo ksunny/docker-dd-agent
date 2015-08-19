@@ -1,0 +1,5 @@
+init_config:
+  default_timeout: 5
+
+instances:
+  - url: http://internal-portfolio-Internal-1GZCG4XPMN2WS-969465822.us-west-2.elb.amazonaws.com:8080
