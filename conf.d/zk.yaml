@@ -1,6 +1,6 @@
 init_config:
 
 instances:
-  - host: localhost
+  - host: internal-portfolio-Internal-1GZCG4XPMN2WS-969465822.us-west-2.elb.amazonaws.com
     port: 2181
     timeout: 3

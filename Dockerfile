@@ -28,10 +28,10 @@ RUN mv /etc/dd-agent/datadog.conf.example /etc/dd-agent/datadog.conf \
  && chmod +x /etc/init.d/datadog-agent \
  && rm /etc/dd-agent/conf.d/network.yaml.default
 
-# Add Docker check
+# Add some checks
 COPY conf.d/docker.yaml /etc/dd-agent/conf.d/docker.yaml
-COPY conf.d/zk.yaml /etc/dd-agent/conf.d/zk.yaml
 COPY conf.d/mesos.yaml /etc/dd-agent/conf.d/mesos.yaml
+COPY conf.d/zk.yaml /etc/dd-agent/conf.d/zk.yaml
 COPY conf.d/marathon.yaml /etc/dd-agent/conf.d/marathon.yaml
 
 COPY entrypoint.sh /entrypoint.sh
