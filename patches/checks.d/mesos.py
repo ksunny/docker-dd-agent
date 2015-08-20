@@ -38,7 +38,7 @@ class Mesos(AgentCheck):
         if response is not None:
             tags = instance_tags
             for key in iter(response):
-                self.gauge('mesos.stats.' + key.replace('/', '.'), response[key], tags=tags)
+                self.gauge('mesos.stats.' + key, response[key], tags=tags)
 
         response = self.get_master_state(url, timeout)
         if response is not None:
@@ -70,9 +70,7 @@ class Mesos(AgentCheck):
         return self.get_json(url + "/master/state.json", timeout)
 
     def get_master(self, url, timeout):
-
         tags = ["url:%s" % url]
-
         try:
             r = requests.get(url + "/master/redirect", timeout=timeout, allow_redirects=False)
             if r.status_code != 307:
